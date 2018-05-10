@@ -51,12 +51,12 @@ child.on('exit', function (e, code) {
 
 
 
-//const readline = require('readline');
-//const rl = readline.createInterface({
-//	  input: process.stdin,
-//	  output: process.stdout,
-//	  prompt: 'OHAI> '
-//});
+const readline = require('readline');
+const rl = readline.createInterface({
+	  input: process.stdin,
+	  output: process.stdout,
+	  prompt: 'OHAI> '
+});
 
 rl.prompt();
 
