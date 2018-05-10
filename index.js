@@ -40,7 +40,7 @@ watcher.on('change',(e,error)=>{
 })
 
 var editor = process.env.EDITOR || 'vi';
-
+var child_process = require('child_process')
 var child = child_process.spawn(editor, ['./index.js'], {
 	    stdio: 'inherit'
 });
