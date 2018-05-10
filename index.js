@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
+
 const fs = require('fs');
 const crypto = require('crypto');
 
@@ -38,12 +39,24 @@ watcher.on('change',(e,error)=>{
 	//console.log('error', error);
 })
 
-const readline = require('readline');
-const rl = readline.createInterface({
-	  input: process.stdin,
-	  output: process.stdout,
-	  prompt: 'OHAI> '
+var editor = process.env.EDITOR || 'vi';
+
+var child = child_process.spawn(editor, ['./index.js'], {
+	    stdio: 'inherit'
 });
+
+child.on('exit', function (e, code) {
+	    console.log("finished");
+});
+
+
+
+//const readline = require('readline');
+//const rl = readline.createInterface({
+//	  input: process.stdin,
+//	  output: process.stdout,
+//	  prompt: 'OHAI> '
+//});
 
 rl.prompt();
 
